@@ -1,0 +1,38 @@
+<h1>Find Movie</h1>
+
+<form>
+  <div>
+    <input type="text" name="search" [(ngModel)]="searchInput" (keyup)="searchSpotify()" placeholder="Search">
+  </div>
+</form>
+<!--{{searchInput}}-->
+
+
+<div *ngIf="movieInfo" class="mocieCard">
+  <br>
+  <div class="container">
+    <img src={{movieInfo.posterView}} alt="">
+    <h2>{{movieInfo.TitleView}}</h2>
+    <br>
+    <h3>Release Date: {{movieInfo.ReleasedView}}</h3>
+    <br>
+    <h3>Genre: {{movieInfo.GenreView}}</h3>
+  </div>
+  <br>
+  Director: {{movieInfo.DirectorView}}
+  <br>
+  Writer: {{movieInfo.WriterView}}
+  <br>
+  Actors: {{movieInfo.ActorsView}}
+  <br>
+  Plot: {{movieInfo.PlotView}}
+  <br>
+  Language: {{movieInfo.LanguageView}}
+  <br>
+  Country: {{movieInfo.CountryView}}
+  <br>
+  Awards: {{movieInfo.AwardsView}}
+  <br>
+  imdb rating: {{movieInfo.imdbRatingView}}
+  <br>
+</div>
