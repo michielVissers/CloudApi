@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SpotifyComponent } from './spotify/spotify.component';
+import { IdComponent } from './id/id.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SpotifyComponent } from './spotify/spotify.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    SpotifyComponent
+    SpotifyComponent,
+    IdComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,7 +30,8 @@ import { SpotifyComponent } from './spotify/spotify.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'spotify', component: SpotifyComponent}
+      { path: 'movie', component: SpotifyComponent},
+      { path: 'id', component: IdComponent}
     ])
   ],
   providers: [],

@@ -2,32 +2,68 @@ li .glyphicon {
     margin-right: 10px;
 }
 
+.navbar-collapse {
+    float: right;
+    width: 35%;
+    padding: 0px;
+}
+
 /* Highlighting rules for nav menu items */
 li.link-active a,
 li.link-active a:hover{
-    color: #00FF00;
+    font-weight: bolder;
+    /*text-decoration: underline;*/
 }
+
 li.link-active a:focus {
-    color: #00FF00;
+    color: #004CFF;
 }
+
+.navbar li a {
+    color: #ffffff;
+    font-size: 16pt;
+    padding: 10px 16px;
+    border-radius: 4px;
+    float: left;
+}
+
+.navbar li a:hover{
+    color: #004CFF;
+}
+
 
 /* Keep the nav menu independent of scrolling and on top of other items */
 .main-nav {
-    position: fixed;
+    /*position: fixed;*/
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 0;
 }
 
+.navbar {
+    background-color: #95D5FF;
+    border-radius: 0px;
+    border-width: 0px;
+    padding-top: 20px;
+    height: 50px;
+    width: 100%;
+}
+
+.navbar-brand{
+    color: white;
+    font-size: 16pt;
+}
+
+/*
 @media (min-width: 768px) {
-    /* On small screens, convert the nav menu to a vertical sidebar */
+    
     .main-nav {
         height: 10%;
         width: calc(25% - 20px);
     }
     .navbar {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: #95D5FF;
         border-radius: 0px;
         border-width: 0px;
         height: 10%;
@@ -40,7 +76,6 @@ li.link-active a:focus {
     .navbar-collapse {
         float: right;
         width: 70%;
-        border-top: 1px solid #444;
         padding: 0px;
     }
     .navbar ul {
@@ -54,29 +89,24 @@ li.link-active a:focus {
         margin: 6px;
         float: left;
     }
-    .navbar li a {
-        color: #ffffff;
-        padding: 10px 16px;
-        border-radius: 4px;
-        float: left;
-    }
+    
 
     .navbar li a:hover {
-        color: #00ff00;
+        color: #004CFF;
         padding: 10px 16px;
         border-radius: 4px;
         float: left;
     }
 
     .navbar li a:focus {
-        color: #00ff00;
+        color: #004CFF;
         padding: 10px 16px;
         border-radius: 4px;
         float: left;
     }
 
     .navbar a {
-        /* If a menu item's text is too long, truncate it */
+        
         color: #ffffff;
         width: 100%;
         white-space: nowrap;
@@ -84,3 +114,4 @@ li.link-active a:focus {
         text-overflow: ellipsis;
     }
 }
+*/

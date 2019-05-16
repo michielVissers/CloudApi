@@ -9,8 +9,8 @@ export class SpotifyService {
 
   }
 
-  searchSpotify(searchText:string, type='artist'){
-    this.searchUrl = 'http://www.omdbapi.com/?apikey=84deed1&t='+searchText;
+  searchSpotify(searchText:string,type:string ,genre='default'){
+    this.searchUrl = 'http://www.omdbapi.com/?apikey=84deed1&'+type+'='+searchText;
     return this._http.get<IMovieInfo>(this.searchUrl);
   }
 

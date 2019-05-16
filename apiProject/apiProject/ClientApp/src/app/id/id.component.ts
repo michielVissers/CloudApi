@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import {SpotifyService, IMovieInfo} from '../service/spotify.service'
 
 @Component({
-  selector: 'app-spotify',
-  templateUrl: './spotify.component.html',
-  styleUrls: ['./spotify.component.css'],
+  selector: 'app-id',
+  templateUrl: './id.component.html',
+  styleUrls: ['./id.component.css'],
   providers:[SpotifyService]
 })
-export class SpotifyComponent implements OnInit {
-  
+export class IdComponent implements OnInit {
+
   searchInput:string;
 
   movieInfo: IMovieDisplay;
@@ -20,7 +20,7 @@ export class SpotifyComponent implements OnInit {
 
   searchSpotify(){
     //console.log(this.searchInput);
-    this._spotifyService.searchSpotify(this.searchInput, "t").
+    this._spotifyService.searchSpotify(this.searchInput, "i").
     subscribe((result) => {
       console.table(result);
       this.movieInfo = {

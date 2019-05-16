@@ -1,0 +1,37 @@
+<body>
+    <div class="form">
+      <form>
+        <input type="text" name="search" [(ngModel)]="searchInput" (keyup)="searchSpotify()" placeholder="Search id">
+        <p style="font-style: italic; color: white;">example id tt1285016</p>
+      </form>
+    </div>
+    <!--{{searchInput}}-->
+    
+    
+    <div *ngIf="movieInfo" class="movieCard">
+      <br>
+      <div class="wrapper">
+        <img src={{movieInfo.posterView}} alt="" class="box a">
+        <h2 class="box b">{{movieInfo.TitleView}}</h2>
+        <h3 class="box c">Release Date: {{movieInfo.ReleasedView}}</h3>
+        <h3 class="box d">Genre: {{movieInfo.GenreView}}</h3>
+      </div>
+      <br>
+      Director: {{movieInfo.DirectorView}}
+      <br>
+      Writer: {{movieInfo.WriterView}}
+      <br>
+      Actors: {{movieInfo.ActorsView}}
+      <br>
+      Plot: {{movieInfo.PlotView}}
+      <br>
+      Language: {{movieInfo.LanguageView}}
+      <br>
+      Country: {{movieInfo.CountryView}}
+      <br>
+      Awards: {{movieInfo.AwardsView}}
+      <br>
+      imdb rating: {{movieInfo.imdbRatingView}}
+      <br>
+    </div>
+    </body>

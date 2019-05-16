@@ -22,13 +22,18 @@
                         <span class='glyphicon glyphicon-education'></span> Search
                     </a>
                 </li>-->
-                <li [routerLinkActive]='["link-active"]'>
+                <!--<li [routerLinkActive]='["link-active"]'>
                     <a [routerLink]='["/fetch-data"]' (click)='collapse()'>
                         <span class='glyphicon glyphicon-th-list'></span> Fetch data
                     </a>
-                </li>
+                </li>-->
                 <li [routerLinkActive]='["link-active"]'>
-                    <a [routerLink]='["/spotify"]' (click)='collapse()'>
+                        <a [routerLink]='["/id"]' (click)='collapse()'>
+                            <span class='glyphicon glyphicon-th-list'></span> Search id
+                        </a>
+                    </li>
+                <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/movie"]' (click)='collapse()'>
                         <span class='glyphicon glyphicon-th-list'></span> Search movie
                     </a>
                 </li>
