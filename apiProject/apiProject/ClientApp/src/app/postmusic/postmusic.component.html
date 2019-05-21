@@ -1,0 +1,23 @@
+<body>
+
+  <h1>Add a song</h1>
+  <div class="form">
+    <form>
+      <span style="color: white">title:</span>
+      <br>
+      <input type="text" name="title" [(ngModel)]="titleSong" placeholder="title">
+      <br>
+      <span style="color: white">duration:</span>
+      <br>
+      <input type="text" name="duration" [(ngModel)]="durationSong" placeholder="duration">
+      <br>
+      <span style="color: white">artist id:</span> 
+      <br>
+      <span style="font-style: italic; color: white;">(you can find this on the search music tap)</span>
+      <br>
+      <input type="text" name="artistId" [(ngModel)]="artistId" placeholder="artistId">
+      <br>
+      <input type="submit">
+    </form>
+  </div>
+</body>

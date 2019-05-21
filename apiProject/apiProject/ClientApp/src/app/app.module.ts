@@ -11,6 +11,9 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SpotifyComponent } from './spotify/spotify.component';
 import { IdComponent } from './id/id.component';
+import { LoginComponent } from './login/login.component';
+import { MusicComponent } from './music/music.component';
+import { PostmusicComponent } from './postmusic/postmusic.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { IdComponent } from './id/id.component';
     CounterComponent,
     FetchDataComponent,
     SpotifyComponent,
-    IdComponent
+    IdComponent,
+    LoginComponent,
+    MusicComponent,
+    PostmusicComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -31,7 +37,9 @@ import { IdComponent } from './id/id.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'movie', component: SpotifyComponent},
-      { path: 'id', component: IdComponent}
+      { path: 'id', component: IdComponent},
+      { path: 'music', component: MusicComponent},
+      { path: 'addmusic', component: PostmusicComponent}
     ])
   ],
   providers: [],

@@ -1,11 +1,19 @@
 <body>
+
 <div class="form">
+
+  <!--
+  <div style="height: 80px;"></div>
+    <input type="radio" id="radio1" name="radios" value="i" [ngModel]="typeFilter" checked>
+    <label for="radio1" style="border-radius: 10px 0px 0px 10px;">Id</label>
+  <input type="radio" id="radio3" name="radios" value="t" [ngModel]="typeFilter" class="rightR">
+    <label for="radio3" style="border-radius: 0px 10px 10px 0px;">Movie</label> -->
+
   <form>
     <input type="text" name="search" [(ngModel)]="searchInput" (keyup)="searchSpotify()" placeholder="Search movie">
   </form>
 </div>
 <!--{{searchInput}}-->
-
 
 <div *ngIf="movieInfo" class="movieCard">
   <br>

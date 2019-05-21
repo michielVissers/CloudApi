@@ -1,0 +1,22 @@
+<body>
+  <div class="form">
+    <form>
+      <input type="text" name="search" [(ngModel)]="searchInput" (keyup)="searchMusic()" placeholder="Search music">
+    </form>
+  </div>
+
+  <ul *ngIf="musicInfo">
+    <li *ngFor="let m of musicInfo">
+       {{m.titleView}}
+    </li>
+ </ul>
+
+
+  <div *ngIf="musicInfo" class="movieCard">
+    <br>
+    <h1>{{musicInfo.titleView}}</h1>
+    <br>
+    <strong>duration:</strong> {{musicInfo.durationView}}
+    <br>
+  </div>
+  </body>

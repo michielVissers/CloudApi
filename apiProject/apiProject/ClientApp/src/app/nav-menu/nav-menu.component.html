@@ -7,7 +7,7 @@
                 <span class='icon-bar'></span>
                 <span class='icon-bar'></span>
             </button>
-            <a class='navbar-brand' [routerLink]='["/"]'>Omdb API</a>
+            <a class='navbar-brand' [routerLink]='["/"]'>Media client</a>
         </div>
         <!--<div class='clearfix'></div>-->
         <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
@@ -29,14 +29,24 @@
                 </li>-->
                 <li [routerLinkActive]='["link-active"]'>
                         <a [routerLink]='["/id"]' (click)='collapse()'>
-                            <span class='glyphicon glyphicon-th-list'></span> Search id
+                            <span class='glyphicon glyphicon-th-list'></span> Search movie id
                         </a>
                     </li>
                 <li [routerLinkActive]='["link-active"]'>
                     <a [routerLink]='["/movie"]' (click)='collapse()'>
-                        <span class='glyphicon glyphicon-th-list'></span> Search movie
+                        <span class='glyphicon glyphicon-facetime-video'></span> Search movie
                     </a>
                 </li>
+                <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/music"]' (click)='collapse()'>
+                        <span class='glyphicon glyphicon-music'></span> Search music
+                    </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
+                        <a [routerLink]='["/addmusic"]' (click)='collapse()'>
+                            <span class='glyphicon glyphicon-music'></span> Add music
+                        </a>
+                    </li>
             </ul>
         </div>
     </div>
