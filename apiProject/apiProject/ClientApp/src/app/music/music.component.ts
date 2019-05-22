@@ -10,7 +10,7 @@ import {MusicService, Imusic} from '../service/music.service'
 export class MusicComponent implements OnInit {
 
   searchInput:string;
-  musicInfo:IMusicDisplay;
+  musicInfo:Imusic[];
 
   constructor(private _musicService:MusicService) { }
 
@@ -22,12 +22,13 @@ export class MusicComponent implements OnInit {
     this._musicService.searchMusicAPI(this.searchInput).
     subscribe((result) => {
       console.table(result);
-      this.musicInfo = {
+      this.musicInfo = result
+      /*{
         idView: result.id,
         titleView: result.title,
         durationView: result.duration,
         artistIdView: result.artistId
-      };
+      };*/
     }, (error) => {
       this.musicInfo = null;
     })

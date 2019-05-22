@@ -5,18 +5,26 @@
     </form>
   </div>
 
-  <ul *ngIf="musicInfo">
+  <ul *ngIf="musicInfo" style="list-style: none; background-color: #95D5FF;">
     <li *ngFor="let m of musicInfo">
-       {{m.titleView}}
+      <div class="movieCard">
+       <h1>{{m.title}}</h1>
+       <br>
+       <strong>Duration: </strong>{{m.duration}}
+       <br>
+       <strong>Song ID: </strong>{{m.id}}
+       <br>
+       <strong>Artist ID: </strong>{{m.artistId}}
+      </div>
     </li>
  </ul>
 
-
+ <!--
   <div *ngIf="musicInfo" class="movieCard">
     <br>
     <h1>{{musicInfo.titleView}}</h1>
     <br>
     <strong>duration:</strong> {{musicInfo.durationView}}
     <br>
-  </div>
+  </div>-->
   </body>

@@ -1,9 +1,8 @@
 <body>
-
-  <h1>Add a song</h1>
+  <div style="height: 100px"></div>
   <div class="form">
     <form>
-      <span style="color: white">title:</span>
+      <span style="color: white;">title:</span>
       <br>
       <input type="text" name="title" [(ngModel)]="titleSong" placeholder="title">
       <br>
@@ -17,7 +16,7 @@
       <br>
       <input type="text" name="artistId" [(ngModel)]="artistId" placeholder="artistId">
       <br>
-      <input type="submit">
+      <input type="submit" value="ADD SONG" (click)="postMusic()">
     </form>
   </div>
 </body>
