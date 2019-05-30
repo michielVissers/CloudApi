@@ -22,7 +22,12 @@ namespace apiProject.Controllers
         [HttpGet]
         public List<Song> GetSongs()
         {
-            return _context.Songs.ToList();
+            var songsList = _context.Songs.ToList();
+            for (int i = 0; i < songsList.Count(); i++)
+            {
+                songsList[i] = _context.Songs.Include(s => s.Artist).SingleOrDefault(song => song.Id == songsList[i].Id);
+            }
+            return songsList;
         }
 
         [Route("{id}")]
@@ -50,9 +55,20 @@ namespace apiProject.Controllers
             return NoContent();
         }
 
+        /*[HttpPost]
+        public ActionResult<Song> AddSong([FromBody]Song song)
+        {
+            _context.Songs.Add(song);
+            _context.SaveChanges();
+            //return song met ID
+            return Created("", song);
+        }*/
+
         [HttpPost]
         public ActionResult<Song> AddSong([FromBody]Song song)
         {
+            int id = song.Artist.Id;
+            song.Artist = _context.Artists.SingleOrDefault(artist => artist.Id == id);
             _context.Songs.Add(song);
             _context.SaveChanges();
             //return song met ID
@@ -67,6 +83,30 @@ namespace apiProject.Controllers
             _context.SaveChanges();
             //return song met ID
             return Created("", song);
+        }
+
+        [Route("abc")]
+        [HttpGet]
+        public List<Song> GetAbc()
+        {
+            var songsList = _context.Songs.ToList();
+            for (int i = 0; i < songsList.Count(); i++)
+            {
+                songsList[i] = _context.Songs.Include(s => s.Artist).SingleOrDefault(song => song.Id == songsList[i].Id);
+            }
+            return songsList.OrderBy(song => song.Artist.Alias).ToList();
+        }
+
+        [Route("filter/{alias}")]
+        [HttpGet]
+        public List<Song> GetArtistSongs(string alias)
+        {
+            var songsList = _context.Songs.ToList();
+            for (int i = 0; i < songsList.Count(); i++)
+            {
+                songsList[i] = _context.Songs.Include(s => s.Artist).SingleOrDefault(song => song.Id == songsList[i].Id);
+            }
+            return songsList.Where(song => song.Artist.Alias.Equals(alias)).ToList();
         }
     }
 }

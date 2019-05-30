@@ -35,9 +35,10 @@ export class MusicComponent implements OnInit {
   }
 }
 
+/*
 export interface IMusicDisplay {
   idView: number;
   titleView: string;
   durationView: string;
   artistIdView: number;
-}
+}*/

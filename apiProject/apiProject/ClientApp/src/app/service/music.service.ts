@@ -10,16 +10,16 @@ export class MusicService {
   }
 
   searchMusicAPI(searchText:string){
-    this.musicSearchUrl = 'http://localhost:51331/api/songs';
+    this.musicSearchUrl = 'http://localhost:51331/api/songs/filter/' + searchText;
     return this._http.get<Imusic[]>(this.musicSearchUrl);
   }
 
-  postMusicAPI(title:string, duration:string, artistId:number){
+  postMusicAPI(Title:string, Duration:string, ArtistId:number){
     this.musicSearchUrl = 'http://localhost:51331/api/songs';
-    this._http.post('http://jsonplaceholder.typicode.com/posts', {
-      title: title,
-      body: duration,
-      artistId: artistId
+    this._http.post(this.musicSearchUrl, {
+      title: Title,
+      duration: Duration,
+      artist: {"Id" : ArtistId}
     })
       .subscribe(
         res => {
@@ -37,5 +37,12 @@ export interface Imusic {
   title: string;
   duration: string;
   artistId: number;
-  artist: any;
+  artist: IArtist;
+}
+
+export interface IArtist {
+  id: number;
+  name: string;
+  alias: string;
+  born: string;
 }

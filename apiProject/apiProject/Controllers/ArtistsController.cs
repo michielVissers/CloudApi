@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using apiProject.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace apiProject.Controllers
 {
@@ -19,6 +20,8 @@ namespace apiProject.Controllers
         }
 
         [HttpGet]
+        //[Route("private-scoped")]
+        [Authorize("userScope")]
         public List<Artist> GetArtists()
         {
             return _context.Artists.ToList();
@@ -26,6 +29,8 @@ namespace apiProject.Controllers
 
         [Route("{id}")]
         [HttpGet]
+        //[Route("private-scoped")]
+        [Authorize("userScope")]
         public ActionResult<Artist> GetArtist(int id)
         {
             var theArtist = _context.Artists.Find(id);
