@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using apiProject.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace apiProject.Controllers
 {
@@ -98,6 +99,7 @@ namespace apiProject.Controllers
         }
 
         [Route("filter/{alias}")]
+        [Authorize("userScope")]
         [HttpGet]
         public List<Song> GetArtistSongs(string alias)
         {

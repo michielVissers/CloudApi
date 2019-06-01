@@ -14,6 +14,8 @@ import { IdComponent } from './id/id.component';
 import { LoginComponent } from './login/login.component';
 import { MusicComponent } from './music/music.component';
 import { PostmusicComponent } from './postmusic/postmusic.component';
+import { CallbackComponent } from './callback/callback.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { PostmusicComponent } from './postmusic/postmusic.component';
     IdComponent,
     LoginComponent,
     MusicComponent,
-    PostmusicComponent
+    PostmusicComponent,
+    CallbackComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -46,3 +50,4 @@ import { PostmusicComponent } from './postmusic/postmusic.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
