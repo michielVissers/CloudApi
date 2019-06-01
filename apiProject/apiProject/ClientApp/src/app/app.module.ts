@@ -17,6 +17,8 @@ import { PostmusicComponent } from './postmusic/postmusic.component';
 import { CallbackComponent } from './callback/callback.component';
 import { AuthComponent } from './auth/auth.component';
 
+import { AuthService } from "./auth/auth-service.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,10 +45,11 @@ import { AuthComponent } from './auth/auth.component';
       { path: 'movie', component: SpotifyComponent},
       { path: 'id', component: IdComponent},
       { path: 'music', component: MusicComponent},
-      { path: 'addmusic', component: PostmusicComponent}
+      { path: 'addmusic', component: PostmusicComponent},
+      { path: 'login', component: LoginComponent}
     ])
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

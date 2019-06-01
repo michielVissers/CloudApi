@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AuthService } from '../auth/auth-service.service';
 
 @Injectable()
 export class MusicService {
   private musicSearchUrl: string;
 
-  constructor(private _http:HttpClient) { 
+  constructor(public auth: AuthService, private _http:HttpClient) { 
 
   }
 
   searchMusicAPI(searchText:string){
     this.musicSearchUrl = 'http://localhost:51331/api/songs/filter/' + searchText;
-    return this._http.get<Imusic[]>(this.musicSearchUrl);
+    return this._http.get<Imusic[]>(this.musicSearchUrl, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)
+    });
   }
 
   postMusicAPI(Title:string, Duration:string, ArtistId:number){
